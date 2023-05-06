@@ -16,8 +16,8 @@ const data: EventOrArrayOfEvents[] = [
   [
     {
       name: "✅ Check In",
-      start: "9:00",
-      end: "9:30",
+      start: "8:45",
+      end: "9:00",
     },
     {
       name: "🥯 Breakfast",
@@ -38,88 +38,65 @@ const data: EventOrArrayOfEvents[] = [
   },
   [
     {
-      name: "🌈 Build a Personal Website! (HTML/CSS)",
+      name: "🌈 How to Build a Website",
       start: "10:30",
       end: "11:30",
       tag: "workshop",
     },
     {
-      name: "🐍 Intro to Python",
+      name: "🐍 Python Data Visualization",
       start: "10:30",
       end: "11:30",
       tag: "workshop",
     },
   ],
-  {
-    name: "🐢 Turtle Party (Python)",
-    start: "11:30",
-    end: "12:30",
-    tag: "workshop",
-  },
+  [
+    {
+      name: "🍃 Sprig 101",
+      start: "11:30",
+      end: "12:30",
+      tag: "workshop",
+    },
+    {
+      name: "🤖 Discord Bot",
+      start: "11:30",
+      end: "12:30",
+      tag: "workshop",
+    },
+  ],
   {
     name: "🍕 Lunch",
-    start: "13:00",
-    end: "13:30",
+    start: "12:30",
+    end: "13:00",
     tag: "food",
   },
   {
-    name: "🐝 Python/JavaScript Bee",
-    start: "14:00",
-    end: "15:00",
-    tag: "event",
-  },
-  {
-    name: "🤖 Build a Python Discord Bot",
-    description: "by Sarvesh Madullapalli",
-    start: "15:00",
-    end: "16:00",
-    tag: "workshop",
-  },
-  {
-    name: "🧋 Boba Break",
-    start: "16:00",
-    end: "16:30",
-    tag: "food",
-  },
-  {
-    name: "💻 An Overview of Git",
-    description: "by Dennis Chen",
-    start: "16:30",
+    name: "🎥 Movie",
+    start: "15:30",
     end: "17:30",
-    tag: "workshop",
-  },
-  {
-    name: "👾 Game Tournament (Game TBD)",
-    start: "17:30",
-    end: "18:30",
     tag: "event",
   },
   {
     name: "🥪 Dinner",
     start: "18:30",
-    end: "19:00",
+    end: "19:15",
     tag: "food",
   },
   {
-    name: "🎤 Presentations",
-    start: "19:00",
-    end: "19:45",
-  },
-  {
     name: "🗳️ Gallery Walk and Voting",
-    start: "19:45",
-    end: "20:30",
+    start: "19:15",
+    end: "20:15",
   },
   {
     name: "🏆 Closing Ceremony and Awards",
-    start: "20:30",
-    end: "21:00",
+    start: "20:15",
+    end: "20:45",
   },
 ];
 
 const tagColors: { [key in Tag]: string } = {
   food: "bg-blue-700",
-  workshop: "bg-yellow-200 text-gray-900",
+  workshop: "bg-orange-200 text-gray-900",
   event: "bg-green-300 text-gray-900",
 };
 
@@ -156,7 +133,7 @@ const EventCard = ({ event }: { event: Event | Event[] }) => {
       {event.map((e, i) => (
         <li
           className={`group relative mx-1 my-0.5 rounded-lg ${
-            e.tag ? tagColors[e.tag] : "bg-secondary-500"
+            e.tag ? tagColors[e.tag] : "bg-secondary-400"
           } px-2 py-1`}
           key={i}
           style={{ width: `${100 / numEvents}%` }}
@@ -179,19 +156,6 @@ const EventCard = ({ event }: { event: Event | Event[] }) => {
 const Schedule = ({ fullScreen = true }: { fullScreen?: boolean }) => {
   return (
     <>
-      <h2 className="text-3xl font-bold" id="schedule">
-        Schedule (Tentative){" "}
-        {!fullScreen ? (
-          <a
-            className="hover:text-primary-300"
-            href="/schedule"
-            target="_blank"
-            rel="noreferrer"
-          >
-            &#8599;
-          </a>
-        ) : null}
-      </h2>
       <div
         className={`${
           !fullScreen ? "h-96 overflow-auto" : ""

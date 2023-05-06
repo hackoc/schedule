@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.yellow,
-        secondary: colors.blue,
+        primary: colors.orange,
+        secondary: colors.orange,
       },
       fontFamily: {
         sans: ['"League Spartan"', ...defaultTheme.fontFamily.sans],

@@ -6,6 +6,12 @@ const nextConfig = {
       allowFutureImage: true,
     },
   },
+  rewrites: async () => [
+    {
+      source: '/',
+      destination: '/schedule'
+    }
+  ]
 };
 
 module.exports = nextConfig;
